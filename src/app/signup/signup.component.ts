@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
   signUp() {
     console.log(this.signupForm.value);
     if (this.signupForm.valid) {
-      this.httpClient.post('http://localhost:8000/api/user/signup',
+      this.httpClient.post('http://localhost:8000/api/user/signup/',
       JSON.stringify(this.signupForm.value)).subscribe(res => {
         console.log('result', res);
       }, err => {
