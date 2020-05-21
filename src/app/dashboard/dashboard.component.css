@@ -2,6 +2,41 @@
   flex: 1 1 auto;
 }
 
-mat-sidenav {
-  width: 30%;
+
+/**small mobile view rules*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 425px)  { 
+    mat-sidenav {
+        width: 60%;
+    }
+
+}
+/**large mobile view rules*/
+@media only screen 
+  and (min-device-width: 426px) 
+  and (max-device-width: 768px)  { 
+    mat-sidenav {
+        width: 35%;
+    }
+
+}
+
+/**very large mobile (tablets) view rules*/
+@media only screen 
+  and (min-device-width: 769px) 
+  and (max-device-width: 960px)  { 
+    mat-sidenav {
+        width: 30%;
+    }
+
+}
+
+/** other larger screens */
+@media only screen 
+  and (min-device-width: 961px)  { 
+    mat-sidenav {
+        width: 20%;
+    }
+
 }
