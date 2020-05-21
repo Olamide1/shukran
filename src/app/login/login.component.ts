@@ -28,13 +28,14 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.loginForm.value);
     if (this.loginForm.valid) {
-      this.httpClient.post('http://localhost:8000/api/user',
+      this.httpClient.post('http://localhost:3000/api/login',
       JSON.stringify(this.loginForm.value)).subscribe((res: any) => {
         console.log('result', res);
-        if (res.response === 'OK') {
+        this.router.navigate(['/dashboard']);
+        /* if (res.response === 'OK') {
           console.log('redirecting');
           this.router.navigate(['/dashboard']);
-        }
+        } */
       }, err => {
         console.log('err', err);
       }, () => {

@@ -1,1 +1,84 @@
-<p>dashboard works!</p>
+<!-- Put tooltips almost everywhere -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar class="filters">
+      Shukran
+
+      <span class="even-spacer"></span>
+
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async)"
+      >
+        <mat-icon aria-label="Close Side nav toggle icon">close</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item >
+         <a matLine href="#!">Bank details</a>
+         <button mat-icon-button>
+            <mat-icon>account_balance</mat-icon>
+         </button>
+      </mat-list-item>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <mat-list-item >
+         <a matLine href="#!">Profile</a>
+         <button mat-icon-button>
+            <mat-icon>account_box</mat-icon>
+         </button>
+      </mat-list-item>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <mat-list-item >
+         <a matLine href="#!">Settings</a>
+         <button mat-icon-button>
+            <mat-icon>settings</mat-icon>
+         </button>
+      </mat-list-item>
+    </mat-nav-list>
+
+
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="accent">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Hi ...</span>
+      <!-- show number of available properties, and the filter citerias the user has choosen -->
+      <span class="even-spacer"></span>
+      <button
+        type="button"
+        aria-label="show payment url"
+        mat-icon-button
+        (click)="seeURL()"
+      >
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="share your payment url icon">share</mat-icon>
+      </button>
+    
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
