@@ -32,9 +32,14 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { UrlDialogComponent } from './url-dialog/url-dialog.component';
+import { BankDetailsComponent } from './bank-details/bank-details.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,11 @@ import { UrlDialogComponent } from './url-dialog/url-dialog.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    UrlDialogComponent
+    UrlDialogComponent,
+    BankDetailsComponent,
+    SettingsComponent,
+    ProfileComponent,
+    OverviewComponent
   ],
   imports: [
     MatDialogModule,
@@ -50,6 +59,7 @@ import { UrlDialogComponent } from './url-dialog/url-dialog.component';
     AppRoutingModule,
     MatStepperModule,
     RouterModule,
+    MatTabsModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
     HttpClientModule,
